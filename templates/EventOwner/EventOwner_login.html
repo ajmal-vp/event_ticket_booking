@@ -1,0 +1,14 @@
+{% extends 'login.html' %}
+{% block registration %}
+
+{% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+ <form method="POST">
+
+                            {% csrf_token %}
+                                    {{login_form|crispy}}
+                                     {{seller_form|crispy}}
+
+	<button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+{% endblock %}
