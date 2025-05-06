@@ -1,0 +1,72 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+<div class="container py-5">
+
+    <!-- Filter Form -->
+ <form method="get" class="mb-4">
+  <div class="row g-3 align-items-end">
+    <div class="col-md-4">
+      <label class="form-label">Category</label>
+      {{ event_filter.form.category }}
+    </div>
+    <div class="col-md-4">
+      <label class="form-label">Event Name</label>
+      {{ event_filter.form.event_name }}
+    </div>
+    <div class="col-md-auto mt-2">
+      <button class="btn btn-primary" type="submit">Search</button>
+      <a href="{% url 'events_list' %}" class="btn btn-secondary">Reset</a>
+    </div>
+  </div>
+</form>
+
+
+
+    <!-- Event Table -->
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered table-striped align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Image</th>
+                    <th>Event Name</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Venue</th>
+                    <th>Date</th>
+                    <th>Tickets</th>
+                    <th>Price</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for event in data %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>
+                        {% if event.image %}
+                            <img src="{{ event.image.url }}" alt="Image" class="img-thumbnail" style="width: 80px; height: 60px; object-fit: cover;">
+                        {% else %}
+                            <span class="text-muted">No image</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ event.event_name }}</td>
+                    <td>{{ event.category }}</td>
+                    <td>{{ event.description|truncatechars:50 }}</td>
+                    <td>{{ event.venue }}</td>
+                    <td>{{ event.event_date }}</td>
+                    <td>{{ event.total_tickets }}</td>
+                    <td>₹{{ event.price_per_ticket }}</td>
+                    <td>
+                        <a href="{% url 'event_details' event.id %}" class="btn btn-sm btn-info">View</a>
+                        <a href="{% url 'book_now' event.id %}" class="btn btn-sm btn-warning">Book</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+
+<div class="container py-5">
+    <h2>Payment Summary</h2>
+    <ul class="list-group mb-4">
+    <li class="list-group-item"><strong>Event:</strong> {{ event.event_name }}</li>
+    <li class="list-group-item"><strong>Tickets Booked:</strong> {{ tickets_booked }}</li>
+    <li class="list-group-item"><strong>Price per Ticket:</strong> ₹{{ event.price_per_ticket }}</li>
+    <li class="list-group-item">
+        <strong>Total:</strong> ₹{{ tickets_booked }} × ₹{{ event.price_per_ticket }} =
+        <strong>₹{{ total_price|floatformat:"2" }}</strong>
+    </li>
+</ul>
+
+
+    <!-- Dummy Payment Button -->
+    <a href="{% url 'payment_success' %}" class="btn btn-primary">Proceed to Payment</a>
+</div>
+
+{% endblock %}

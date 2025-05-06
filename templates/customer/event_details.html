@@ -1,0 +1,23 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ event.image.url }}" class="img-fluid rounded shadow" alt="{{ event.event_name }}">
+        </div>
+        <div class="col-md-6">
+            <h2 class="text-primary">{{ event.event_name }}</h2>
+            <p><strong>Category:</strong> {{ event.category }}</p>
+            <p><strong>Date:</strong> {{ event.event_date }}</p>
+            <p><strong>Venue:</strong> {{ event.venue }}</p>
+            <p><strong>Price per Ticket:</strong> ₹{{ event.price_per_ticket }}</p>
+            <p><strong>Available Tickets:</strong> {{ event.total_tickets }}</p>
+            <hr>
+            <h4>About the Event</h4>
+            <p>{{ event.about_event }}</p>
+
+            <a href="{% url 'book_now' event.id %}" class="btn btn-success mt-3">Book Now</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

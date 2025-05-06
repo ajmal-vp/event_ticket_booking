@@ -1,0 +1,38 @@
+{% extends 'customer/base.html' %}
+{% block content %}
+
+<div class="container py-5">
+    <h2 class="mb-4">📋 My Bookings</h2>
+    
+    {% if bookings %}
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            {% for booking in bookings %}
+                <div class="col">
+                    <div class="card shadow-sm h-100">
+                        <img src="{{ booking.event.image.url }}" class="card-img-top" style="height: 200px; object-fit: cover;" alt="{{ booking.event.event_name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ booking.event.event_name }}</h5>
+                            <p class="card-text">
+                                📍 {{ booking.event.venue }}<br>
+                                📅 {{ booking.event.event_date|date:"F j, Y, g:i a" }}<br>
+                                🎫 Tickets Booked: {{ tickets }}<br>
+                                💰 Total: ₹{{ total_price }}
+
+
+                            </p>
+                        </div>
+                        <div class="card-footer text-muted text-center">
+                            Booked on: {{ booking.booking_date|date:"M d, Y" }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            You have no completed bookings yet.
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}

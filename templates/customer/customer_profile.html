@@ -1,0 +1,30 @@
+{% extends 'customer/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center">
+                    {% if customer.profile_image %}
+                        <img src="{{ customer.profile_image.url }}" alt="Profile" class="rounded-circle mb-3" width="100" height="100">
+                    {% else %}
+                        <img src="{% static 'images/default-profile.png' %}" alt="Profile" class="rounded-circle mb-3" width="100" height="100">
+                    {% endif %}
+
+                    <h4 class="fw-bold">{{ customer.username }}</h4>
+                    <p class="text-muted">{{ customer.email }}</p>
+
+                    <hr>
+
+                    <div class="text-start mt-3">
+                        <p><strong>Phone:</strong> {{ customer.phone }}</p>
+                        <p><strong>Address:</strong> {{ customer.address }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

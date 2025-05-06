@@ -1,0 +1,35 @@
+{% extends 'customer/base.html' %}
+
+
+{% block content %}
+
+        <div class="container py-4">
+    <h2 class="mb-4">Welcome to Your Dashboard, {{ request.user.username }}!</h2>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Upcoming Events</h5>
+                    <p class="card-text">View events you've booked or are interested in.</p>
+                    <a href="{% url 'event_list' %}" class="btn btn-primary">View Events</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5 class="card-title">Your Bookings</h5>
+                    <p class="card-text">Manage or review your ticket bookings.</p>
+                    <a href="{% url 'my_bookings' %}" class="btn btn-success">View Bookings</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+

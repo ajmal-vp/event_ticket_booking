@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'EventOwner/base.html' %}
+
+{% block content %}
+
+<h3>Update Event: {{ Event_Form.instance.event_name }}</h3>
+
+{% load crispy_forms_tags %}
+<form method="POST">
+    {% csrf_token %}
+
+    {{ Event_Form|crispy }}
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+{% endblock %}

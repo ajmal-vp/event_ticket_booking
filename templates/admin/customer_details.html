@@ -1,0 +1,49 @@
+{% extends 'admin/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Customer List</h2>
+
+    <table class="table table-hover table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Address</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for customer in data %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ customer.name }}</td>
+                <td>{{ customer.email }}</td>
+                <td>{{ customer.address }}</td>
+                <td>{{ customer.phone_no }}</td>
+                <td>
+                    <span class="badge {% if customer.is_active %}bg-success{% else %}bg-secondary{% endif %}">
+                        {{ customer.is_active|yesno:"Active,Inactive" }}
+                    </span>
+                </td>
+                <td>
+                    <a href="{% url 'delete_customer' customer.id %}" class="btn btn-danger btn-sm">Delete</a>
+                    {% if customer.is_active %}
+                        <a href="{% url 'toggle_customer' customer.id %}" class="btn btn-warning btn-sm">Deactivate</a>
+                    {% else %}
+                        <a href="{% url 'toggle_customer' customer.id %}" class="btn btn-success btn-sm">Activate</a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="7" class="text-center">No customers found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
