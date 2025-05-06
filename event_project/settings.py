@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
+from tutorial.settings import DATABASES
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0hh_*x3^7^yu5#i5a9p(0qw)_l^&7n#ocu4z#g_oy&)k#8b20n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -88,15 +90,20 @@ WSGI_APPLICATION = 'event_project.wsgi.application'
 # }
 
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "event_db",
+#         "USER": "postgres",
+#         "PASSWORD": "1234",
+#         "HOST": "127.0.0.1",
+#         "PORT": "5432",
+#     }
+# }
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "event_db",
-        "USER": "postgres",
-        "PASSWORD": "1234",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
-    }
+    "default" : dj_database_url.parse("postgresql://event_db_lnai_user:nYsBopUR9vpgPyltfLYc4ZDiIXoW1uJ5@dpg-d0ct4bumcj7s73auf820-a.oregon-postgres.render.com/event_db_lnai")
+
 }
 
 

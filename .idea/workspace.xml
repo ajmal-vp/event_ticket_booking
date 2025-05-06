@@ -5,38 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c7bbe34-7fc6-4156-bcab-dd7e3723428b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/event_app/admin_views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event_app/filters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/EventOwner/event_owner_profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/EventOwner/eventowner_dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/EventOwner/payment_tracking.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/EventOwner_details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/admin_dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/customer_details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/admin/events_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/book_now.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/card_payment.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/customer_dashboard.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/customer_profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/event_details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/events_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/my_bookings.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/payment_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/customer/payment_success.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Event_ticket_booking_system.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Event_ticket_booking_system.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_app/EventOwner_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_app/EventOwner_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_app/customer_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_app/customer_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_app/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets2/images/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/EventOwner/EventOwner_login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/EventOwner/EventOwner_login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_project/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/EventOwner/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/EventOwner/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/EventOwner/event_upload.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/EventOwner/event_upload.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/EventOwner/update_events.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/EventOwner/update_events.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/EventOwner/view_events.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/EventOwner/view_events.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/admin/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/admin/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/customer/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/customer/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
